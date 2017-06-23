@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Guanlong adapted from dump_bottleneck_features.sh
+# Guanlong adapted from dump_bottleneck_features.sh, this script extracts posteriors
+# given input acoustic frames
 #           2014  Pegah Ghahremani
 #           2017  Guanlong Zhao
 # Apache 2.0
@@ -97,11 +98,11 @@ if [ ! -z "$transform_dir" ]; then
 fi
 
 # Feed the given nnet with processed features and perform the forward pass
-# Generate the output log posteriors and store in Kaldi's ark format
+# Generate the output posteriors and store in Kaldi's ark format
 if [ $stage -le 1 ]; then
   echo "Making Posterior scp and ark."
   $cmd JOB=1:$nj $dir/log/make_bnf_$name.JOB.log \
-    nnet-compute --apply-log=true $bnf_nnet "$feats" ark:- \| \
+    nnet-compute --apply-log=false $bnf_nnet "$feats" ark:- \| \
     copy-feats ark:- ark,scp:$archivedir/raw_bnfeat_$name.JOB.ark,$archivedir/raw_bnfeat_$name.JOB.scp || exit 1;
 fi
 
