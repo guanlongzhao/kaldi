@@ -18,3 +18,7 @@ n_split=50
 # another speaker
 ./make_posteriors.sh --nj 10 ./data/test/split$n_split\utt/9 ./data/test/split$n_split\utt/9/post \
 ./exp/nnet7a_960_gpu ./data/test/split$n_split\utt/9/post ./exp/dump_post_log/9
+
+# another speaker
+./make_posteriors.sh --nj 10 ./data/test/split$n_split\utt/38 ./data/test/split$n_split\utt/38/post \
+./exp/nnet7a_960_gpu ./data/test/split$n_split\utt/38/post ./exp/dump_post_log/38
