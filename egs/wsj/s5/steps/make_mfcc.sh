@@ -9,7 +9,7 @@
 nj=4
 cmd=run.pl
 mfcc_config=conf/mfcc.conf
-compress=true
+compress=false
 write_utt2num_frames=false  # if true writes utt2num_frames
 # End configuration section.
 

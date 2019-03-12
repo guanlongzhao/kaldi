@@ -76,6 +76,8 @@ GSYMS
 /egs/*/s*/plp
 /egs/*/s*/exp
 /egs/*/s*/data
+/egs/arctic/data
+/egs/arctic/exp
 
 # /tools/
 /tools/ATLAS/
